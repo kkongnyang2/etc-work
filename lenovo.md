@@ -1,11 +1,10 @@
 ## 레노버 노트북 개발환경 세팅
 
-### 목표: 새 노트북 세팅
 작성자: kkongnyang2 작성일: 2025-07-25
 
 ---
 
-### > 레노버 윈도우 설치
+### 레노버 윈도우 설치
 
 ```
 다른 컴퓨터로 윈도우 설치마법사 다운
@@ -23,7 +22,7 @@
 windows powershell 들어가서 wmic csproduct로 시리얼 넘버 확인
 ```
 
-### > 레노버 드라이브 설치
+### 레노버 드라이브 설치
 
 ```
 이제 드라이버 설치
@@ -34,11 +33,12 @@ usb에 옮기기
 설치하고 wifi 연결됐으면 레노버 vantage 설치
 들어가서 자동 업데이트 돌리면 드라이버 알아서 깔아줌
 키보드 백라이트나 점검이나 다 여기서 하면됨
+만약 무선랜 드라이버가 이상하면 유선랜 연결하고서 무선랜 드라이버 다시 다운받아 설치
 마지막으로 윈도우 정품인증 키 입력하면 끝
 키 확인은 cmd에서 reg query “HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform” /v BackupProductKeyDefault
 ```
 
-### > 레노버 우분투 설치 (듀얼부팅)
+### 레노버 우분투 설치 (듀얼부팅)
 
 ```
 우분투도 설치할거면
@@ -57,7 +57,7 @@ try or install ubuntu 클릭 딴건 무시
 우분투가 잘 뜨면 gparted로 디스크 확인
 ```
 
-### > vscode 세팅
+### vscode 세팅
 
 ```
 snap은 항상 여러가지 문제 발생. apt로 만들어주자
@@ -73,7 +73,7 @@ github에 올리는 ssh 키 다시 만들어줌
 $ ssh-keygen -t ed25519 -C "for-code"
 ```
 
-### > 키보드 세팅
+### 키보드 세팅
 
 ```
 24.04에서는 ibus-hangul이 기본 내장이라 패키지 설치x

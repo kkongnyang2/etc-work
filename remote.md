@@ -1,10 +1,9 @@
 ## 원격
 
-### 목표: 적어두기
 작성자: kkongnyang2 작성일: 2025-07-28
 
 ---
-### > 호스트 원격 RDP
+### 호스트 원격 RDP
 
 ```
 sudo apt install xrdp       # RDP 서버 프로그램(리눅스용)
@@ -23,4 +22,4 @@ username: kkongnyang2 password: 4108
 ```
 * RDP? 그래픽 명령을 네트워크로 보내서 클라이언트가 그린다
 
-### > ssh 설명
+### ssh 설명
