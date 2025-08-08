@@ -7,8 +7,8 @@
 ### 레노버 윈도우 설치
 
 ```
-다른 컴퓨터로 윈도우 설치마법사 다운
-실행해서 FAT32로 포맷한 usb에 미디어 굽기
+윈도우 설치마법사 다운
+실행해서 FAT32로 포맷한 usb에 굽기
 에이서 홈페이지 지원 phn16-72 검색해서 IRST 드라이버와 유선랜 드라이버 다운
 압축 풀어 usb에 같이 넣어주기
 에이서 노트북에 꽂고 전원키기
@@ -68,21 +68,22 @@ $ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gp
 $ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 $ sudo apt update
 $ sudo apt install code
-extension에서 soft-era 설치
-extension에서 power-mode 설치
-power mode 설정 들어가서 허용 체크, 불꽃으로 선택, 콤보 위치는 editor, 카운팅 보이기, 카운터 사이즈 1.7, threshold 10, timeout 3, 타이머 보이기, 흔들기 허용, 흔들기 강도 1, explosions 허용, 커스텀 gif는 안함
+$ sudo apt install git
 github에 올리는 ssh 키 다시 만들어줌
 $ ssh-keygen -t ed25519 -C "for-code"
+$ cat ~/.ssh/id_ed25519.pub
 github에 공개키 입력해주기
 $ git config --global user.email "i.kkongnyang2@gmail.com"      # 사용자 설정
 $ git clone git@github.com:kkongnyang2/etc-work.git
+extension에서 soft-era 설치
+extension에서 power-mode 설치
+power mode 설정 들어가서 허용 체크, 불꽃으로 선택, 콤보 위치는 editor, 카운팅 보이기, 카운터 사이즈 1.7, threshold 10, timeout 3, 타이머 보이기, 흔들기 허용, 흔들기 강도 1, explosions 허용, 커스텀 gif는 안함
 ```
 
 ### 키보드 세팅
 
 ```
-$ ibus-setup 들어가 reference에 hangul 추가
-이제 RALT를 HNGL로 설정해야 함
+RALT를 HNGL로 설정해야 함
 $ cd /usr/share/X11/xkb/keycodes
 $ sudo cp evdev evdev.bak   # 백업 파일 남겨놓기. 되돌리려면 sudo cp evdev.bak evdev
 $ sudo nano evdev           # 수정
@@ -91,5 +92,8 @@ $ sudo nano evdev           # 수정
 <HNGL> = 130;
 수정본:
 <HNGL> = 108;
-설정 들어가 hangul 키보드 추가 후 토글키 설정, 기존 키보드 삭제
+$ sudo apt install ibus-hangul
+재부팅
+설정 들어가 hangul 키보드 추가 후 기존 키보드 삭제
+더 필요시 토글키 설정, ibus-setup 들어가 reference에 hangul 추가
 ```
