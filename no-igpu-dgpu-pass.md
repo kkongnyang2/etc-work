@@ -1,4 +1,4 @@
-## DGPU 풀 패스스루를 실행해보자
+## IGPU 없을때 DGPU 풀 패스스루를 실행해보자
 
 작성자: kkongnyang2 작성일: 2025-08-02
 
@@ -227,6 +227,7 @@ NVRM: GPU 0000:01:00.0 is already bound to vfio-pci.
 휴대폰 플래시로 비춰보니 화면이 보임. 패널 백라이트 문제임을 알 수 있음. 왜 패널 백라이트가 안켜지냐?
 igpu가 없고 dgpu만 있는 모델은 프레임버퍼가 dpgu 전용 vram에만 있게 되고 패널 eDP 신호선 또한 dpgu display port 엔진에만 물려 있다. 또한 노트북에서는 주로 EC(Embedded Controller)가 밝기를 조절하는 컨트롤러인데, ROM에 EC 펌웨어가 탑재되어 있으며 ACPI라는 테이블을 통해 이걸 os로 넘겨주게 된다. 하지만 qemu 부팅에서는 EC 관련 ACPI를 생성하지 않기 때문에 백라이트를 킬 수 없는 것이다. 그러나 요즘 패널에는 DPCD 주소로 AUX 채널(DisplayPort 배선에 포함된 링크 제어 및 백라이트 조정 채널)을 조절할 수 있게 해놨기에 EC 없이도 조절이 가능하다.
 geforce rtx 4060 game ready 드라이버 552.12 WHQL 계열부터 NVAPI를 통해 eDP AUX 경로(DPCD 레지스터 0x720/0x722/0x723)로 밝기 값을 쓰는 게 가능하다 적혀 있으므로 이걸 이용하자.
+혹은 ovmf로 부팅해도 백라이트 문제가 해결된다
 
 게스트 spice 원격화면 접속
 ```

@@ -257,3 +257,4 @@ drakrun install \
     "/home/kkongnyang2/다운로드/Win10_22H2_English_x64v1.iso" \
     --memory 12288 --vcpus 8
 ```
+안됨
