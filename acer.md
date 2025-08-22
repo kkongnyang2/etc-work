@@ -56,7 +56,7 @@ $ sudo apt upgrade
 ```
 * 만약 secure boot를 켰다면 서드파티 드라이버 설치 중 UEFI Secure boot를 위해 MOK 비밀번호 설정 필요함 41080000. 재부팅 후 서드파티 드라이버 활성화 화면에서 Enroll MOK, continue, yes 선택 후 아까 비밀번호 입력. 그럼 설치가 되고 reboot를 택해주면 됨
 
-### 키보드 세팅
+### 우분투에서 키보드 세팅
 
 ```
 RALT를 HNGL로 설정해야 함
@@ -76,7 +76,7 @@ $ sudo apt install ibus-hangul
 * 더 필요시 토글키 설정, ibus-setup 들어가 reference에 hangul 추가
 
 
-### vscode 세팅
+### 우분투에서 vscode 세팅
 
 ```
 snap은 항상 여러가지 문제 발생. apt로 만들어주자
@@ -95,4 +95,39 @@ $ git clone git@github.com:kkongnyang2/etc-work.git
 extension에서 soft-era 설치
 extension에서 power-mode 설치
 power mode 설정 들어가서 허용 체크, 불꽃으로 선택, 콤보 위치는 editor, 카운팅 보이기, 카운터 사이즈 1.7, threshold 10, timeout 3, 타이머 보이기, 흔들기 허용, 흔들기 강도 1, explosions 허용, 커스텀 gif는 안함
+```
+
+### 윈도우에서 마우스
+
+```
+vxe R1 pro max 마우스는 2.4K 수신기와 4K 수신기가 있음.
+형태는 다섯가지나 가능
+2.4K 수신기
+선+젠더+2.4K 수신기(거리 늘려주기용)
+선+4K 수신기
+유선
+블루투스
+난 2.4K 수신기를 사용하고 있고 변경이 필요하면 https://hub.atk.pro/ 가서 원하는 수신기를 꼽고 원래껀 빼고 페어링해주면 됨.
+
+로지텍 Pro X superlight 마우스는 2.4K 수신기가 있음
+형태는 네가지가 가능
+2.4K 수신기
+선+젠더+2.4K 수신기(거리 늘려주기용)
+유선
+블루투스
+변경이 필요하면 logitech G hub 소프트웨어에서 설정.
+```
+
+### 듀얼부팅 시간 맞추기
+
+```
+우분투에서 timedatectl set-local-rtc 1 --adjust-system-clock
+되돌리려면 timedatectl set-local-rtc 0 --adjust-system-clock
+```
+
+### 사용
+
+```
+윈도우 킬때는 윈도우를 부팅 순서 첫번째로, nvidia gpu only로
+우분투 킬때는 우분투를 부팅 순서 첫번째로, auto select로
 ```
